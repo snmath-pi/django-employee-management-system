@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Add an Employee</h2>
+    <hr>
+    <form action="/add-emp/" method="post">  <!-- Note the trailing slash -->
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Enter first name" value="{{ first_name }}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Enter last name" value="{{ last_name }}">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="number" class="form-control" id="dept" name="dept" placeholder="Enter department" value="{{ department }}">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" class="form-control" id="salary" name="salary" placeholder="Enter salary" value="{{ salary }}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="bonus">Bonus</label>
+            <input type="number" class="form-control" id="bonus" name="bonus" placeholder="Enter bonus" value="{{ bonus }}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input type="number" class="form-control" id="role" name="role" placeholder="Enter role" value="{{ role }}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter phone" value="{{ phone }}">
+        </div>
+        <br>
+        <div class="container text-center">
+            <button type="submit" class="btn btn-primary text-center">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
